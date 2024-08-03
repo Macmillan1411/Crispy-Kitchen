@@ -194,15 +194,15 @@
                         <div class="col-12">
                             <h2 class="mb-lg-5 mb-4">Lunch Menu</h2>
                         </div>
-
+                        {% for lunch_meal in lunch_meals %}
                         <div class="col-lg-6 col-12">
                             <div class="menu-thumb">
-                                <img src="{% static 'images/lunch/louis-hansel-cH5IPjaAYyo-unsplash.jpg' %}" class="img-fluid menu-image" alt="">
+                                <img src="{{lunch_meal.image.url}}" class="img-fluid menu-image" alt="">
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Super Steak Set</h4>
+                                    <h4 class="mb-0">{{lunch_meal.name}}</h4>
 
-                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>32.75</span>
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{lunch_meal.price}}</span>
 
                                     <del class="ms-4"><small>$</small>55</del>
 
@@ -222,7 +222,10 @@
                                 </div>
                             </div>
                         </div>
-
+                        
+                        {% endfor %}
+                     
+                        {% comment %} 
                         <div class="col-lg-6 col-12">
                             <div class="menu-thumb">
                                 <img src="{% static 'images/lunch/louis-hansel-rheOvfxOlOA-unsplash.jpg' %}" class="img-fluid menu-image" alt="">
@@ -247,7 +250,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
 
                     </div>
                 </div>
@@ -260,15 +263,16 @@
                         <div class="col-12">
                             <h2 class="mb-lg-5 mb-4">Dinner Menu</h2>
                         </div>
-
+                        {% for dinner_meal in dinner_meals %}
                         <div class="col-lg-4 col-md-6 col-12">
+
                             <div class="menu-thumb">
-                                <img src="{% static 'images/dinner/farhad-ibrahimzade-ZipYER3NLhY-unsplash.jpg' %}" class="img-fluid menu-image" alt="">
+                                <img src="{{dinner_meal.image.url}}" class="img-fluid menu-image" alt="">
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Seafood Set</h4>
+                                    <h4 class="mb-0">{{dinner_meal.name}}</h4>
 
-                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>65.50</span>
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{dinner_meal.price}}</span>
 
                                     <div class="d-flex flex-wrap align-items-center w-100 mt-2">
                                         <h6 class="reviews-text mb-0 me-3">4.4/5</h6>
@@ -286,8 +290,10 @@
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
+                      
 
-                        <div class="col-lg-4 col-md-6 col-12">
+                        {% comment %} <div class="col-lg-4 col-md-6 col-12">
                             <div class="menu-thumb">
                                 <img src="{% static 'images/dinner/keriliwi-c3mFafsFz2w-unsplash.jpg' %}" class="img-fluid menu-image" alt="">
 
@@ -337,7 +343,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
 
                     </div>
                 </div>
@@ -386,7 +392,7 @@
                             <li><a href="#" class="social-icon-link bi-youtube"></a></li>
                         </ul>
                     
-                        <p class="copyright-text tooplate-mt60">Copyright © 2022 Crispy Kitchen Co., Ltd.
+                        <p class="copyright-text tooplate-mt60">Copyright © 2024 Crispy Kitchen Co., Ltd.
                         <br>Design: <a rel="nofollow" href="https://www.tooplate.com/" target="_blank">Tooplate</a></p>
                         
                     </div>
